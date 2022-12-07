@@ -25,7 +25,7 @@ def readFile(filePath):
 
 
 # Storing File contents in a list
-FASTAFile = readFile("20_BS_Consensus_and_Profile")
+FASTAFile = readFile("26_BS_Consensus_and_Profile")
 # Dictionary for Labels + Data
 FASTADict = {}
 # String for holding the current label
