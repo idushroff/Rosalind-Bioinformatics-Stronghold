@@ -1,4 +1,5 @@
-"""Rosalind: Enumerating Gene Orders = Permutations
+"""
+Rosalind: Enumerating Gene Orders = Permutations
 
 Problem: A permutation of length n is an ordering of the
 positive integers {1,2,…,n}. For example, π=(5,3,2,1,4)

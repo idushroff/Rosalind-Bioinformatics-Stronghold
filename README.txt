@@ -37,8 +37,8 @@ BS = Bioinformatics Stronghold
     The ans.py works but my code doesn't :(((((( (come back to this one in the future)
 
     18. Locating Restriction Sites
-    19. RNA Splicing
-    20.
+    19. RNA Splicing [has two ways of parsing through a FASTA file]
+    20. Enumerating k-mers lexicographically [i.e. using the sort/sorted function]
     21.
     22.
     23.

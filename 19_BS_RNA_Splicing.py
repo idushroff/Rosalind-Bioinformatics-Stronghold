@@ -19,44 +19,69 @@ Sample Output:
 MVYIADKQHVASREAYGHMFKVCA
 """
 
+# Parsing through the FASTA File without Biopython:
+
+# sequences = []
+# DNAsequence = ''
+# # for parsing the FASTA file
+# with open("19_BS_RNA_SplicingAD.txt") as file:
+#     for line in file:
+#         if line.startswith(">"):
+#             nextline = str()  # this is the same as saying nextline = ""
+#         else:
+#             nextline += (line.strip("\n"))
+#             if len(nextline) > len(DNAsequence):
+#                 DNAsequence = nextline
+#             if len(nextline) < len(DNAsequence):
+#                 sequences.append(nextline)
+#     sequences.append(DNAsequence)
+#
+# for elem in sequences:
+#     print('elem', len(elem))
+# print(sequences)
+#
+# DNAseq = sequences[-1]
+# print('DNA1', len(DNAseq), DNAseq)
+# introns = sequences[:-1]
+# introns.sort(reverse=True)
+# print('introns', introns)
+
+# alternatively code for the above is:
+
+"""The chunk of code below parses through the FASTA file and stores the DNA sequence followed by 
+all the introns in a list called sequences using BioPython. Both give the same answer"""
+
+from Bio import SeqIO
 
 sequences = []
-# for parsing the FASTA file
-with open("19_BS_RNA_Splicing.txt") as file:
-    for line in file:
-        if line.startswith(">"):
-            nextline = str()
-        else:
-            nextline += (line.strip("\n"))
-            # print(nextline)
-            sequences.append(nextline)
-
+handle = open('19_BS_RNA_SplicingAD.txt', 'r')
+for record in SeqIO.parse(handle, 'fasta'):
+    sequence = []
+    seq = ''
+    for nt in record.seq:
+        seq += nt
+    sequences.append(seq)
+print(len(sequences))
+handle.close()
 
 DNAseq = sequences[0]
+print('DNA1', len(DNAseq), DNAseq)
 introns = sequences[1:]
-print(DNAseq)
-print(introns)
-
-
-def transcription(seq):
-    return seq.replace('T', 'U')
+introns.sort(reverse=True)
+print('introns', introns)
 
 
 def edit_DNA(DNA):
+    """This function deletes the introns and then transcribes the DNA strand into an mRNA strand."""
     for intron in introns:
-        if intron in DNA:
-            print('DNA', DNA)
-            a = DNA.split(intron)
-            print('a', a)
-            new_DNA_seq = ''
-            for bit in a:
-                new_DNA_seq += bit
-            print('edittedDNA', new_DNA_seq)
-        DNA = new_DNA_seq #I think problem is here somewhere
+        DNA = DNA.replace(intron, "")
+    DNA = DNA.replace('T', 'U')
     return DNA
 
 
 def RNAtoProtein(RNAsequence):
+    """This function converts the transcribed mRNA strand to a protein stand."""
+
     codons = {"UUU": "F", "CUU": "L", "AUU": "I",
               "GUU": "V", "UUC": "F", "CUC": "L", "AUC": "I",
               "GUC": "V", "UUA": "L", "CUA": "L", "AUA": "I",
@@ -84,14 +109,7 @@ def RNAtoProtein(RNAsequence):
     return protein
 
 
-print('final editted dna', edit_DNA(DNAseq))
-transcribed = transcription(DNAseq)
-print('transcribed DNA', transcribed)
-proteinn = RNAtoProtein(transcribed)
+splicedDNA = edit_DNA(DNAseq)
+print('edittedDNA2', splicedDNA)
+proteinn = RNAtoProtein(splicedDNA)
 print(proteinn)
-
-
-
-
-
-
