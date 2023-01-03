@@ -1,4 +1,5 @@
-"""Rosalind: BS - Overlap Graphs
+"""
+Rosalind: BS - Overlap Graphs
 
 Problem: A graph whose nodes have all been labeled can be represented by an adjacency list, in which each row of the list contains the two node labels corresponding to a unique edge.
 

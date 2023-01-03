@@ -1,9 +1,7 @@
-# Rosalind - Bioinformatics Stronghold
-# 2. Transcribing DNA into RNA
-
 """
-Problem
-An RNA string is a string formed from the alphabet containing
+Rosalind: BS - Transcribing DNA into RNA
+
+Problem: An RNA string is a string formed from the alphabet containing
 'A', 'C', 'G', and 'U'.
 
 Given a DNA string t corresponding to a coding strand,
@@ -15,14 +13,12 @@ Given: A DNA string t having length at most 1000 nt.
 Return: The transcribed RNA string of t.
 """
 
-#my method:
+# Method 1:
 t = 'GATGGAACTTGACTACGTAAATT'
 u = t.replace('T', 'U')
 print(u)
 
-# Method 2
-
-
+# Method 2:
 def transcription(seq):
     return seq.replace('T', 'U')
 

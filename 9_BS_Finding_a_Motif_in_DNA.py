@@ -1,4 +1,5 @@
-"""Rosalind: BS - Finding a Motif in DNA
+"""
+Rosalind: BS - Finding a Motif in DNA
 
 Problem: Given two strings s and t, t is a substring of s if t is contained as a contiguous collection of symbols in s (as a result, t must be no longer than s).
 

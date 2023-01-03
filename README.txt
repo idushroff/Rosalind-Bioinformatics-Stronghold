@@ -19,7 +19,7 @@ BS = Bioinformatics Stronghold
     1. Counting DNA Nucleotides
     2. Transcribing DNA into RNA
     3. Complementing a Strand of DNA
-    ***4. Rabbits and Recurrence Relationsv
+    ***4. Rabbits and Recurrence Relations
     5. Computing GC content [first time parsing a FASTA file]
     6. Counting point mutations [first time using the zip method]
     7. Mendel's First law [probability tree]
@@ -94,16 +94,16 @@ AH = Algorithmic Heights
     22. Bellman-Ford Algorithm
     23. Shortest Cycle Through a Given Edge
     24. Median
-    Partial Sort
-    Topological Sorting
-    Hamiltonian Path in DAG
-    Negative Weight Cycle
-    Quick Sort
-    Strongly Connected Components
-    2-Satisfiability
-    General Sink
-    Semi-Connected Graph
-    Shortest Paths in DAG
+    25. Partial Sort
+    26. Topological Sorting
+    27. Hamiltonian Path in DAG
+    28. Negative Weight Cycle
+    29. Quick Sort
+    30. Strongly Connected Components
+    31. 2-Satisfiability
+    32. General Sink
+    33. Semi-Connected Graph
+    34. Shortest Paths in DAG
 
 *AH is same as some Algo problems so see Algo repository for that
 The ones which weren't covered in algo but are a part of Rosalind are added there as "AH-..."

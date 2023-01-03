@@ -1,5 +1,4 @@
 """
-
 Rosalind - BS - Finding a protein Motif
 
 Problem: To allow for the presence of its varying forms, a protein motif is

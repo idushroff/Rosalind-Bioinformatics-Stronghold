@@ -1,2 +1,5 @@
-# Rosalind - Bioinformatics Stronghold
-# 4.
+"""
+Rosalind: BS - Rabbits and Recurrence Relations
+
+
+"""
