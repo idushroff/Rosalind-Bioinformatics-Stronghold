@@ -14,14 +14,28 @@ Return: The reverse complement sc of s.
 """
 
 
-# my method:
+# my method 1:
+# def ReverseComplement(seq):
+#     DNA_ReverseComplement = {'A': 'T', 'G': 'C', 'T': 'A', 'C': 'G'}
+#     sc = "".join([DNA_ReverseComplement.get(c) for c in seq])
+#     return sc[::-1]
+
+# method 2:
 def ReverseComplement(seq):
     DNA_ReverseComplement = {'A': 'T', 'G': 'C', 'T': 'A', 'C': 'G'}
-    sc = "".join([DNA_ReverseComplement.get() for c in text])
-    return reversed(sc)
+    sc = "".join([DNA_ReverseComplement.get(c) for c in reversed(seq)])
+    return sc
 
+# print(ReverseComplement("AAAACCCGGT"))
+print(ReverseComplement("GCTAGCT"))
 
-print(ReverseComplement("AAAACCCGGT"))
+# method 3: using bioseq
+from Bio.Seq import Seq
+
+seq = Seq("GCTAGCT")
+
+print(seq.reverse_complement())
+
 
 # https://www.youtube.com/watch?v=G8-fNk9vlaY&t=16s
 

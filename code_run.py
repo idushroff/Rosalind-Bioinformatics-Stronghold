@@ -23,12 +23,13 @@
 # # print(sequences)
 
 
-a = "-"
-b = a.join(("MCO", "MCO"))
-c = a.join("MCO")
-# d = a.join("MCO", "MCO") # this one gives error
-
-print(b)
-print(c)
+# a = "-"
+# b = a.join(("MCO", "MCO"))
+# c = a.join("MCO")
+# # d = a.join("MCO", "MCO") # this one gives error
+#
+# print(b)
+# print(c)
 # print(d)
+
 
