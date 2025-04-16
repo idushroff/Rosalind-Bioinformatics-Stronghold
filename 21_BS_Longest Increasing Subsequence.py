@@ -48,48 +48,54 @@ with open("21_BS_Longest_Increasing_Subsequence.txt") as file:
     n = contents[0]
     print(n)
 
-    seq = ''.join(contents[1:]).replace('\n', ' ')
-    print('seq', seq)
+    seq = ''.join(contents[1:]).replace('\n', '')
+    # print('seq', seq)
 
-nospace_seq = seq.replace(' ', '')
-inc_subseqss = []
-inc_subseq = []
-# decreasing_subseq = []
-#
-#
-for i in nospace_seq:
-    print('i----', i)
-    i = int(i)
-    inc_subseq.append(i)
-    print(inc_subseq)
+original_seq = seq.replace(' ', '')
+print('og', original_seq)
 
-    for j in nospace_seq:
-        print('j', j)
-        j = int(j)
-        if j > i:
-            inc_subseq.append(j)
-print(inc_subseq)
+subseq = []
+i = 0
+
+all_increasing_subseq = []
+all_decreasing_subseq = []
+#
+# longest_increasing_subseq = sorted(all_increasing_subseq[1])
+# print(longest_increasing_subseq)
+#
+# longest_decreasing_subseq = sorted(all_decreasing_subseq[1])
+# print(longest_decreasing_subseq)
+
+for num in original_seq:
+
+    if len(subseq) == 0:
+        subseq += num
+        print(subseq)
+
+    else:
+        if num < subseq[i]:
+            subseq += num
+            print(subseq)
+            i += 1
+        else:
+            all_decreasing_subseq += subseq.replace(' ', '')
+
+            break
 
 
-#     # elem = int(elem)
-#     if len(increasing_subseq) == 0:
-#         increasing_subseq[0] = max(nospace_seq)
-#
-#     elif elem > nospace_seq[0]:
-#         increasing_subseq += elem
-#
-#
-# for elem in nospace_seq:
-#     if elem == nospace_seq[0]:
-#         decreasing_subseq += elem
-#     elif elem < nospace_seq[0]:
-#         decreasing_subseq += elem
-#     # prev_elem = elem
-#     # print(prev_elem)
-#     # if elem > prev_elem:
-#     #     increasing_subseq += elem
-#     # elif elem < prev_elem:
-#     #     decreasing_subseq += elem
-#
-# print(increasing_subseq)
-# print(decreasing_subseq)
+
+    # print(temporary_subseq)
+
+"""
+    Sample
+    Dataset
+    5
+    5 1 4 2 3
+
+    Sample
+    Output
+    1 2 3
+    5 4 2
+
+
+"""

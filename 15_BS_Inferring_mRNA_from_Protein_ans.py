@@ -1,3 +1,5 @@
+"""Rosalind: BS - Inferring mRNA from Protein"""
+# Someone else's solution to this problem
 from functools import reduce
 from operator import mul
 
@@ -34,3 +36,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+# Alternative solution: https://cenkcelik.info/2020/04/27/inferring-mrna-from-protein/

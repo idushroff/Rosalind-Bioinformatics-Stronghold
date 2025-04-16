@@ -33,3 +33,10 @@
 # print(d)
 
 
+numbers = []
+for i in range(1, 71):
+    numbers.append(i)
+    if i % 10 in [3, 4, 5]:
+        numbers.pop()
+
+print(numbers)

@@ -1,9 +1,13 @@
 """
 Rosalind: BS - Finding a Shared Motif
 
-Problem:A common substring of a collection of strings is a substring of every member of the collection. We say that a common substring is a longest common substring if there does not exist a longer common substring. For example, "CG" is a common substring of "ACGTACGT" and "AACCGTATA", but it is not as long as possible; in this case, "CGTA" is a longest common substring of "ACGTACGT" and "AACCGTATA".
+Problem:A common substring of a collection of strings is a substring of every member of the collection.
+We say that a common substring is a longest common substring if there does not exist a longer common substring.
+For example, "CG" is a common substring of "ACGTACGT" and "AACCGTATA", but it is not as long as possible; in this
+case, "CGTA" is a longest common substring of "ACGTACGT" and "AACCGTATA".
 
-Note that the longest common substring is not necessarily unique; for a simple example, "AA" and "CC" are both longest common substrings of "AACC" and "CCAA".
+Note that the longest common substring is not necessarily unique; for a simple example, "AA" and "CC" are
+both longest common substrings of "AACC" and "CCAA".
 
 Given: A collection of k (k≤100) DNA strings of length at most 1 kbp each in FASTA format.
 
@@ -17,6 +21,7 @@ from Bio import SeqIO
 s = []
 handle = open('13_BS_Finding_a_Shared_Motif', 'r')
 for record in SeqIO.parse(handle, 'fasta'):
+
     sequence = []
     seq = ''
     for nt in record.seq:
@@ -44,7 +49,8 @@ for i in range(len(shortest)):
     n = 0
     present = True
     while present:
-             # Cycle inside over all other DNA strings and if it's present in there considered a motif and length gets increased by 1
+             # Cycle inside over all other DNA strings and if it's present in there considered a motif
+             # and length gets increased by 1
         for each in s:
             if shortest[i:i+n] not in each or n>1000:
                 present = False
